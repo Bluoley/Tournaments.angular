@@ -1,5 +1,6 @@
 @use "bootstrap" as *;
 @use "scss/variables" as *;
+@use "@angular/material" as mat;
 
 body {
   background-color: $color_back;
@@ -9,12 +10,27 @@ body {
   font-style: normal;
 }
 
-.testt{
+.testt {
   background-color: palevioletred;
 }
 
+.row,
+.col {
+  margin: 0px;
+  padding: 0px;
+}
 
-.row, .col {
-  margin: 0px ;
-  padding: 0px ;
+:root {
+  @include mat.dialog-overrides(
+    (
+      container-max-width: 100%
+    )
+  );
+
+
+}
+
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-shape: 5px;
 }

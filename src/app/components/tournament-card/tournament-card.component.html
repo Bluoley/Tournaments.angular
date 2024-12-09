@@ -1,13 +1,17 @@
-<section class="card-custom d-flex flex-column mx-4 my-5">
+<section
+  class="card-custom d-flex flex-column mx-4 my-5"
+  (click)="openTournamentDialog()"
+>
   <img [src]="tournament?.imgUrl" alt="image" />
-  <div class="row" class="pt-4 ps-3">
-    <p class="m-0">{{ tournament?.name }}
+  <div class="row pt-4 ps-3">
+    <p class="m-0">
+      {{ tournament?.name }}
       @if (tournament?.status !== 1) {
-        <span class="done">(Terminado)</span>
+      <span class="done">(Terminado)</span>
       }
     </p>
     <div class="d-flex flex-column">
-      <span style="color: #757575;">{{ tournament?.game }}</span>
+      <span style="color: #757575">{{ tournament?.game }}</span>
       <span>{{ tournament?.date | date : "MMM d, y, h:mm a" }}</span>
     </div>
     <div class="col" style="margin-top: 10px">

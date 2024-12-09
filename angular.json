@@ -30,6 +30,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "node_modules/swiper/swiper-bundle.min.css",
               "src/styles.scss"
             ],
@@ -94,6 +95,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/cyan-orange.css",
               "node_modules/swiper/swiper-bundle.min.css",
               "src/styles.scss"
             ],

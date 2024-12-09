@@ -9,7 +9,6 @@ import { TournamentListComponent } from './tournament-list/tournament-list.compo
   styleUrl: './tournaments.component.scss',
 })
 export class TournamentsComponent {
-  typeList: boolean = true;
 
   constructor() {}
 }

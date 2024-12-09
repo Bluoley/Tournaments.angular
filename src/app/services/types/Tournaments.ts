@@ -11,4 +11,5 @@ export interface Tournament {
   imgUrl: string;
   game: string;
   status: number;
+  listParticipants: string[];
 }
