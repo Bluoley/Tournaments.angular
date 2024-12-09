@@ -25,7 +25,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     var swiper = new Swiper('.mySwiper', {
-      // autoplay: true,
+      autoplay: true,
       slidesPerView: 1,
       navigation: {
         nextEl: '.swiper-button-next',

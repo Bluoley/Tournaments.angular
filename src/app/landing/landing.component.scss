@@ -8,11 +8,11 @@ img {
   width: 100%;
 }
 
-
 .backk {
   height: 65vh;
-  width: 100vw;
+  width: 100%;
   position: absolute;
+  filter: blur(15vh);
   top: 0;
   left: 0;
   z-index: -1;
