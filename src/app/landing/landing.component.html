@@ -1,0 +1,16 @@
+<section class="backk" id="back"></section>
+<section class="highlight d-flex justify-content-center mt-4">
+  <div class="swiper mySwiper w-100">
+    <div class="swiper-wrapper">
+      @for (item of majorTournaments; track $index) {
+      <div class="swiper-slide">
+        <img [src]="item?.imageUrl" alt="major tournament" />
+      </div>
+      }
+    </div>
+    <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+  </div>
+</section>
+
+<app-tournaments ></app-tournaments>

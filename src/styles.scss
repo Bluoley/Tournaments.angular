@@ -1,0 +1,14 @@
+@use "bootstrap" as *;
+@use "scss/variables" as *;
+
+body {
+  background-color: $color_back;
+  color: $color_text;
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.testt{
+  background-color: palevioletred;
+}
