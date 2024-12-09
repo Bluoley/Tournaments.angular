@@ -5,9 +5,18 @@
   border: 1px solid rgba($color_back, 0.59);
   backdrop-filter: blur(5px);
   position: relative;
+  overflow: hidden;
   border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
 
   img {
+    transition: transform 0.2s ease;
     height: 300px;
     object-fit: cover;
     width: 100%;
