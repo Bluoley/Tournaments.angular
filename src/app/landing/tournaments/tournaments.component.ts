@@ -5,9 +5,10 @@ import { Component } from '@angular/core';
   selector: 'app-tournaments',
   imports: [CommonModule],
   templateUrl: './tournaments.component.html',
-  styleUrl: './tournaments.component.scss'
+  styleUrl: './tournaments.component.scss',
 })
 export class TournamentsComponent {
-  typeList: boolean = true
+  typeList: boolean = true;
 
+  constructor() {}
 }
