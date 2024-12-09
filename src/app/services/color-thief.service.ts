@@ -16,7 +16,6 @@ export class ColorThiefService {
 
   // async getDominantColor(imageSrc: string): Promise<number[] | null> {
   //   if (!isPlatformBrowser(this.platformId)) {
-  //     console.warn('ColorThiefService can only be used in the browser.');
   //     return null;
   //   }
 
@@ -29,7 +28,6 @@ export class ColorThiefService {
     colorCount: number
   ): Promise<number[][] | null> {
     if (!isPlatformBrowser(this.platformId)) {
-      console.warn('ColorThiefService can only be used in the browser.');
       return null;
     }
 

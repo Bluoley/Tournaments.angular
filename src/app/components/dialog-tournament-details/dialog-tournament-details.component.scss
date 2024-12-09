@@ -28,13 +28,13 @@ section {
   .list-gamers {
     overflow-y: auto;
     max-height: 330px;
-    background: darken($color_back, $amount: 3);
-    
-    // scrollbar-color: rgb(75, 75, 75) #cccccc;
-    // scrollbar-width: thin;
-    
+    background: #020205;
   }
-  
+
+  .done {
+    font-size: 18px;
+    color: #757575;
+  }
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -42,7 +42,7 @@ section {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 10px;
   border-radius: 5px;
 }
@@ -51,6 +51,6 @@ section {
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  background: $color_main; 
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  background: $color_main;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }

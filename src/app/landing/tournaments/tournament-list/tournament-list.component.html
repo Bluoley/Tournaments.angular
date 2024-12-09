@@ -1,11 +1,7 @@
-<section class="mt-2  row">
-  @for (chunk of chunkData; track $index) {
-  <div class="row">
-    @for (item of chunk; track $index) {
-    <div class="col">
-      <app-tournament-card [tournament]="item"></app-tournament-card>
-    </div>
-    }
+<section class="mt-2 row">
+  @for (item of tournamentsData; track $index) {
+  <div class="col-4">
+    <app-tournament-card [tournament]="item"></app-tournament-card>
   </div>
   }
 </section>

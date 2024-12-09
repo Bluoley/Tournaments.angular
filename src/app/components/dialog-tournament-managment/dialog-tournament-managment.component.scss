@@ -1,0 +1,38 @@
+@use "../../../scss/variables" as *;
+section {
+  width: 45vh;
+  background: $color_back;
+  position: relative;
+
+  h2 {
+    color: $color_main;
+  }
+
+  button {
+    background-color: $color_main;
+    border-radius: 5px;
+    border: 1px solid $color_back;
+
+    height: 50px;
+    color: $color_back;
+    transition: all 0.2s;
+    &:hover {
+      font-weight: bolder;
+      background: darken($color_main, $amount: 10);
+    }
+  }
+
+  button:last-child {
+    background: transparent;
+    color: $color_main;
+    border: 1px solid $color_main;
+    &:hover {
+      background: lighten($color_back, $amount: 3);
+    }
+  }
+
+  .disabl {
+    background-color: darken(grey, $amount: 15) !important;
+  }
+}
+

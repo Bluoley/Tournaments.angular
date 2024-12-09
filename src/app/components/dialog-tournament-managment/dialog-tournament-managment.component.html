@@ -1,0 +1,77 @@
+<section class="p-4">
+  <h2>Torneo Nuevo</h2>
+  <form class="row mt-3" [formGroup]="tournamentForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre del Torneo</mat-label>
+      <input matInput formControlName="name" />
+      @if (tournamentForm.controls.name.hasError('required')) {
+      <mat-error>Nombre del torneo es requerido</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Juego</mat-label>
+      <mat-select formControlName="game">
+        @for (game of dataGames; track game) {
+        <mat-option [value]="game.name">{{ game.name }}</mat-option>
+        }
+      </mat-select>
+      @if (tournamentForm.controls.game.hasError('required')) {
+      <mat-error>Juego es requerido</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Ubicacion</mat-label>
+      <input matInput formControlName="ubication" />
+      @if (tournamentForm.controls.ubication.hasError('required')) {
+      <mat-error>Ubicacion es requerida</mat-error>
+      } @else if (tournamentForm.controls.ubication.hasError('pattern')) {
+      <mat-error>Ubicacion contiene caracteres invalidos</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha del Torneo</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (tournamentForm.controls.date.hasError('matDatepickerParse')) {
+      <mat-error>Fecha del torneo contiene un formato incorrecto</mat-error>
+      } @else if (tournamentForm.controls.date.hasError('required')) {
+      <mat-error>Fecha del torneo es requerida</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Imagen URL</mat-label>
+      <input matInput formControlName="imgUrl" />
+      @if (tournamentForm.controls.imgUrl.hasError('required')) {
+      <mat-error>URL de la imagen es requerido</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Descripcion</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+      @if (tournamentForm.controls.description.hasError('required')) {
+      <mat-error>Descripcion es requerida</mat-error>
+      } @else if (tournamentForm.controls.description.hasError('pattern')) {
+      <mat-error>Descripcion contiene caracteres invalidos</mat-error>
+      }
+    </mat-form-field>
+    <div class="d-flex">
+      <button
+        mat-button
+        type="submit"
+        class="w-75 me-4"
+        (click)="createTournament()"
+        [disabled]="!tournamentForm.valid"
+        [ngClass]="{ disabl: !tournamentForm.valid }"
+      >
+        Crear Torneo
+      </button>
+      <button mat-button class="w-50" (click)="closeDialog()" type="button">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</section>

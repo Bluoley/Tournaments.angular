@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,11 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './dialog-tournament-details.component.html',
   styleUrl: './dialog-tournament-details.component.scss',
 })
-export class DialogTournamentDetailsComponent implements OnInit{
+export class DialogTournamentDetailsComponent {
   data = inject(MAT_DIALOG_DATA).data;
   readonly dialogRef = inject(MatDialogRef<DialogTournamentDetailsComponent>);
-
-  ngOnInit(): void {
-    console.log('this.data',this.data);
-  }
 }

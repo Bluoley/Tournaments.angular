@@ -9,7 +9,20 @@ h3 {
   font-weight: 700;
 }
 
-
 section {
-  margin-top: 80px
+  margin-top: 80px;
+}
+
+button {
+  background-color: $color_main;
+  border-radius: 5px;
+  border: 1px solid $color_back;
+  width: 150px;
+  color: $color_back;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $color_back;
+    color: $color_main;
+    font-weight: 600;
+  }
 }

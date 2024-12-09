@@ -17,7 +17,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Lugar 1, CDMX',
         participants: '85',
-        date: '2024-12-31 15:00:00',
+        date: '2024-12-31',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733721996/lihwlh1p4xynviwwcikm.avif',
         game: 'League of Legends',
@@ -81,7 +81,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Lugar 5, Tijuana',
         participants: '1059',
-        date: '2024-12-31 12:00:00',
+        date: '2024-12-31',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733722241/qglhfyux9aadnvedofkk.webp',
         game: 'Fornite',
@@ -145,7 +145,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Cualquier Lugar, Sonora',
         participants: '185',
-        date: '2024-12-01 10:00:00',
+        date: '2024-12-01',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733722305/qfiewmfkuaqd8j4mokkf.webp',
         game: 'Counter Strike 2',
@@ -209,7 +209,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Lugar Grande, Sinaloa',
         participants: '984',
-        date: '2024-12-31 20:00:00',
+        date: '2024-12-31',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733722346/moe4pmcjtu2h7zhb2hsy.webp',
         game: 'Free Fire',
@@ -273,7 +273,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Lugar 33, Durango',
         participants: '333',
-        date: '2024-12-31 18:00:00',
+        date: '2024-12-31',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733722384/jgayawvevkel2cgu91lm.jpg',
         game: 'Fornite',
@@ -337,7 +337,7 @@ export class TournamentsService {
           'Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor posuere elementum ultrices sed orci posuere faucibus bibendum. Ex quam mi id finibus in felis volutpat. Blandit commodo tempus venenatis ultricies lobortis aliquet velit integer. Sed facilisi sem felis eget phasellus placerat. Quam adipiscing fringilla est urna habitasse.',
         ubication: 'Lugar 44, Nuevo Leon',
         participants: '444',
-        date: '2024-12-31 23:00:00',
+        date: '2024-12-31',
         imgUrl:
           'https://res.cloudinary.com/dqhqif9sw/image/upload/v1733722415/bwtkwqi17vy1yil1k01v.jpg',
         game: 'Street Fighter',

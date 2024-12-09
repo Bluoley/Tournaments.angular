@@ -1,4 +1,7 @@
 <section class="mb-5">
-  <h3 class="pb-2">Lista de Torneos</h3>
-  <app-tournament-list></app-tournament-list>
+  <div class="d-flex justify-content-between">
+    <h3 class="pb-2">Lista de Torneos</h3>
+    <button (click)="openTournamentDialog()">Agregar Torneo</button>
+  </div>
+  <app-tournament-list [tournament]="tournamentData"></app-tournament-list>
 </section>
