@@ -1,7 +1,7 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Tournament } from '../../services/types/Tournaments';
 import { CommonModule } from '@angular/common';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogTournamentDetailsComponent } from '../dialog-tournament-details/dialog-tournament-details.component';
 import { DialogTournamentManagmentComponent } from '../dialog-tournament-managment/dialog-tournament-managment.component';
 
@@ -13,6 +13,7 @@ import { DialogTournamentManagmentComponent } from '../dialog-tournament-managme
 })
 export class TournamentCardComponent implements OnInit {
   @Input() tournament: Tournament | undefined;
+  @Output() deleteEvent = new EventEmitter<Tournament>();
   readonly dialog = inject(MatDialog);
 
   constructor() {}
@@ -33,6 +34,10 @@ export class TournamentCardComponent implements OnInit {
         this.tournament = result.tournament;
       }
     });
+  }
+
+  delete() {
+    this.deleteEvent.emit(this.tournament);
   }
 
   openTournamentDialog() {

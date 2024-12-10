@@ -1,7 +1,7 @@
 <section class="mt-2 row">
   @for (item of tournamentsData; track $index) {
   <div class="col-4">
-    <app-tournament-card [tournament]="item"></app-tournament-card>
+    <app-tournament-card [tournament]="item" (deleteEvent)="receiveDelete($event)"></app-tournament-card>
   </div>
   }
 </section>

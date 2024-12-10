@@ -17,7 +17,7 @@ import { Tournament } from '../../../services/types/Tournaments';
 })
 export class TournamentListComponent implements OnInit, OnChanges {
   @Input() tournament: Tournament | undefined;
-  tournamentsData: any[] | undefined;
+  tournamentsData!: any[];
   constructor(private tournamentService: TournamentsService) {}
 
   ngOnInit(): void {
@@ -26,6 +26,15 @@ export class TournamentListComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.tournamentsData?.push(this.tournament);
+  }
+
+  receiveDelete($event: any) {
+    const index = this.tournamentsData?.findIndex(
+      (item) => item.name === $event.name
+    );
+    if (index !== -1) {
+      this.tournamentsData.splice(index, 1);
+    }
   }
 
   getAllTournaments() {

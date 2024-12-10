@@ -115,7 +115,7 @@ export class DialogTournamentManagmentComponent
   }
 
   canDeactivate(): boolean {
-    if (this.tournamentForm.dirty) {
+    if (this.tournamentForm.dirty || this.addForm.dirty) {
       return confirm(
         'Tienes cambios sin guardar. ¿Estás seguro de que quieres cerrar el formulario?'
       );
