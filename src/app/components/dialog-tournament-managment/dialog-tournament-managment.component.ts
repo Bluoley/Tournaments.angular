@@ -105,6 +105,9 @@ export class DialogTournamentManagmentComponent
       };
       this.dialogRef.close({ tournament: tournamentEdited });
     } else if (this.data.type === 'add') {
+      if (!this.data?.data?.listParticipants?.length) {
+        this.data.data.listParticipants = [];
+      }
       this.addForm.value.participants.forEach((element: any) => {
         this.data.data.listParticipants.push(element.name);
       });
