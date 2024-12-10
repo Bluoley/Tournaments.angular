@@ -9,5 +9,6 @@ export const PHONE_PATTERN = new RegExp(
   );
   export const TEXT_ONLY = new RegExp(/^[A-Za-zÀ-ÖØ-öø-ÿ ]*$/);
   export const NUMBER_ONLY = new RegExp(/^[0-9]*$/);
-  export const TEXT_NUMBER = new RegExp(/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ]*$/);
+  export const TEXT_NUMBER = new RegExp(/^[A-Za-zÀ-ÖØ-öø-ÿ0-9 ,.!]*$/);
+
   

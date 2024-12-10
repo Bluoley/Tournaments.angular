@@ -1,5 +1,12 @@
+@if (data.type === 'register' || data.type === 'edit') {
 <section class="p-4">
+  @switch (data.type) { @case('edit') {
+  <h2>Editar Torneo</h2>
+  } @case('add') {
+  <h2>Agregar Participantes</h2>
+  } @default {
   <h2>Torneo Nuevo</h2>
+  } }
   <form class="row mt-3" [formGroup]="tournamentForm">
     <mat-form-field appearance="outline">
       <mat-label>Nombre del Torneo</mat-label>
@@ -67,7 +74,8 @@
         [disabled]="!tournamentForm.valid"
         [ngClass]="{ disabl: !tournamentForm.valid }"
       >
-        Crear Torneo
+        @switch (data.type) { @case('edit') { Editar Torneo } @case('add') {
+        Agregar } @default { Crear Torneo } }
       </button>
       <button mat-button class="w-50" (click)="closeDialog()" type="button">
         Cancelar
@@ -75,3 +83,4 @@
     </div>
   </form>
 </section>
+}

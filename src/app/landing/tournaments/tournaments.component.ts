@@ -20,6 +20,9 @@ export class TournamentsComponent {
     const dialogRef = this.dialog.open(DialogTournamentManagmentComponent, {
       disableClose: true,
       position: { top: '25px' },
+      data: {
+        type: 'register'
+      }
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {

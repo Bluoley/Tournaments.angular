@@ -7,7 +7,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  cursor: pointer;
+
 
   &:hover {
     img {
@@ -16,6 +16,7 @@
   }
 
   img {
+    cursor: pointer;
     transition: transform 0.2s ease;
     height: 300px;
     object-fit: cover;
@@ -24,6 +25,7 @@
   }
 
   p {
+    cursor: pointer;
     font-size: 1.3rem;
     color: $color_main;
     font-weight: 700;
@@ -37,4 +39,23 @@
 .done {
   font-size: 18px;
   color: #757575;
+}
+
+.float-buttons {
+  button {
+    border: none;
+    padding-right: 0px;
+    background: transparent;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 22.5px;
+    svg {
+      height: 100%;
+    }
+
+    &:focus {
+      border: none !important;
+      outline: none !important;
+    }
+  }
 }

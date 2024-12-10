@@ -18,7 +18,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { GameService } from '../../services/game.service';
 import { Game } from '../../services/types/Games';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TEXT_NUMBER, TEXT_ONLY } from '../../../utils/regexp';
 import { CanComponentDeactivate } from '../../guards/form-deactivate.guard';
 
@@ -41,6 +41,7 @@ export class DialogTournamentManagmentComponent
   implements OnInit, CanComponentDeactivate
 {
   readonly dialogRef = inject(MatDialogRef<DialogTournamentManagmentComponent>);
+  data = inject(MAT_DIALOG_DATA);
   dataGames: Game[] | undefined;
 
   tournamentForm = new FormGroup({
@@ -58,10 +59,7 @@ export class DialogTournamentManagmentComponent
     ]),
     date: new FormControl(null, [Validators.required]),
     imgUrl: new FormControl(null, [Validators.required]),
-    description: new FormControl(null, [
-      Validators.required,
-      Validators.pattern(TEXT_NUMBER),
-    ]),
+    description: new FormControl(null, [Validators.required]),
     status: new FormControl(1),
   });
 
@@ -69,11 +67,21 @@ export class DialogTournamentManagmentComponent
 
   ngOnInit(): void {
     this.getAllGames();
+    if (this.data.type === 'edit') {
+      this.tournamentForm.patchValue(this.data.data);
+    }
   }
 
   createTournament() {
-    console.log(this.tournamentForm.valid);
-    this.dialogRef.close({ tournament: this.tournamentForm.value });
+    if (this.data.type === 'edit') {
+      let tournamentEdited = {
+        ...this.data.data,
+        ...this.tournamentForm.value,
+      };
+      this.dialogRef.close({ tournament: tournamentEdited });
+    } else {
+      this.dialogRef.close({ tournament: this.tournamentForm.value });
+    }
   }
 
   canDeactivate(): boolean {
