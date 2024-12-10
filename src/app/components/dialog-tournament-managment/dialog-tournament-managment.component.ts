@@ -6,6 +6,8 @@ import {
   OnInit,
 } from '@angular/core';
 import {
+  FormArray,
+  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -43,6 +45,7 @@ export class DialogTournamentManagmentComponent
   readonly dialogRef = inject(MatDialogRef<DialogTournamentManagmentComponent>);
   data = inject(MAT_DIALOG_DATA);
   dataGames: Game[] | undefined;
+  addForm!: FormGroup;
 
   tournamentForm = new FormGroup({
     name: new FormControl(null, [
@@ -63,13 +66,35 @@ export class DialogTournamentManagmentComponent
     status: new FormControl(1),
   });
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService, private fb: FormBuilder) {
+    this.addForm = this.fb.group({
+      participants: this.fb.array([]),
+    });
+  }
 
   ngOnInit(): void {
     this.getAllGames();
     if (this.data.type === 'edit') {
       this.tournamentForm.patchValue(this.data.data);
+    } else if (this.data.type === 'add') {
+      this.addParticipant();
     }
+  }
+
+  get participants() {
+    return this.addForm.controls['participants'] as FormArray;
+  }
+
+  addParticipant() {
+    this.participants.push(
+      this.fb.group({
+        name: ['', Validators.required],
+      })
+    );
+  }
+
+  removeParticipant(index: number) {
+    this.participants.removeAt(index);
   }
 
   createTournament() {
@@ -79,6 +104,11 @@ export class DialogTournamentManagmentComponent
         ...this.tournamentForm.value,
       };
       this.dialogRef.close({ tournament: tournamentEdited });
+    } else if (this.data.type === 'add') {
+      this.addForm.value.participants.forEach((element: any) => {
+        this.data.data.listParticipants.push(element.name);
+      });
+      this.dialogRef.close({ tournament: this.data.data });
     } else {
       this.dialogRef.close({ tournament: this.tournamentForm.value });
     }

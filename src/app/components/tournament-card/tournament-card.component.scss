@@ -8,7 +8,6 @@
   overflow: hidden;
   border-radius: 5px;
 
-
   &:hover {
     img {
       transform: scale(1.05);
@@ -57,5 +56,12 @@
       border: none !important;
       outline: none !important;
     }
+  }
+}
+
+.svg_buttons {
+  fill: white;
+  &:hover {
+    fill: $color_main !important;
   }
 }

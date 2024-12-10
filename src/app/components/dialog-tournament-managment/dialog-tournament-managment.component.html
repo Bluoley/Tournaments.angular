@@ -1,11 +1,9 @@
 @if (data.type === 'register' || data.type === 'edit') {
 <section class="p-4">
   @switch (data.type) { @case('edit') {
-  <h2>Editar Torneo</h2>
-  } @case('add') {
-  <h2>Agregar Participantes</h2>
-  } @default {
-  <h2>Torneo Nuevo</h2>
+  <h2 class="mb-4">Editar Torneo</h2>
+  }@default {
+  <h2 class="mb-4">Torneo Nuevo</h2>
   } }
   <form class="row mt-3" [formGroup]="tournamentForm">
     <mat-form-field appearance="outline">
@@ -82,5 +80,59 @@
       </button>
     </div>
   </form>
+</section>
+} @else if(data.type === 'add'){
+<section class="p-4">
+  <h2 class="">Agregar Participantes</h2>
+  <div class="d-flex flex-row-reverse mb-3" style="margin-right: 10px">
+    <button class="add_button" (click)="addParticipant()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path
+          d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"
+        />
+      </svg>
+    </button>
+  </div>
+  <form class="row" [formGroup]="addForm">
+    <ng-container formArrayName="participants">
+      @for (item of participants.controls; track item; let i = $index) {
+      <ng-container [formGroupName]="i">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre del Participante</mat-label>
+          <input matInput formControlName="name" />
+          @if(i !== 0) {
+          <button
+            class="add_button pe-2"
+            (click)="removeParticipant(i)"
+            matSuffix
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM184 232l144 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-144 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"
+                fill="#990000"
+              />
+            </svg>
+          </button>
+          } @if (item.get('name')?.hasError('required')) {
+          <mat-error>Nombre del participante es requerido</mat-error>
+          }
+        </mat-form-field>
+      </ng-container>
+      }
+    </ng-container>
+  </form>
+  <div class="d-flex mt-4">
+    <button
+      mat-button
+      type="submit"
+      class="w-75 me-4"
+      (click)="createTournament()"
+    >
+      Agregar
+    </button>
+    <button mat-button class="w-50" (click)="closeDialog()" type="button">
+      Cancelar
+    </button>
+  </div>
 </section>
 }

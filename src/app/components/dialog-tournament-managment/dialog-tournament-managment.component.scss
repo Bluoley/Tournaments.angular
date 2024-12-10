@@ -8,6 +8,22 @@ section {
     color: $color_main;
   }
 
+  .add_button {
+    height: 25px;
+    border: none !important;
+    svg {
+      height: 25px;
+      fill: white;
+      &:hover {
+        fill: $color_main;
+      }
+    }
+  }
+
+  .removeParticipant {
+    height: 15px !important;
+  }
+
   button {
     background-color: $color_main;
     border-radius: 5px;
@@ -40,7 +56,6 @@ section {
     max-height: 150px;
   }
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
