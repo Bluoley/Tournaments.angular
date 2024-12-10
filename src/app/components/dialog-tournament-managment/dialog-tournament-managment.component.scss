@@ -57,6 +57,12 @@ section {
   }
 }
 
+@media (max-width: 520px) {
+  section {
+    width: unset;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

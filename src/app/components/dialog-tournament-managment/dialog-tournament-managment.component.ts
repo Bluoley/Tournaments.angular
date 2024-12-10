@@ -50,11 +50,11 @@ export class DialogTournamentManagmentComponent
   tournamentForm = new FormGroup({
     name: new FormControl(null, [
       Validators.required,
-      Validators.pattern(TEXT_ONLY),
+      Validators.pattern(TEXT_NUMBER),
     ]),
     game: new FormControl(null, [
       Validators.required,
-      Validators.pattern(TEXT_ONLY),
+      Validators.pattern(TEXT_NUMBER),
     ]),
     ubication: new FormControl(null, [
       Validators.required,

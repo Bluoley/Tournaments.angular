@@ -18,3 +18,21 @@ img {
   z-index: -1;
 }
 
+@media (max-width: 1140px) {
+  .highlight {
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .highlight {
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .highlight {
+    height: 250px !important;
+  }
+}
+
